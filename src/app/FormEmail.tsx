@@ -35,7 +35,7 @@ function FormEmail() {
       }
     };
   return (
-    <form  className="flex gap-2 " onSubmit={handleSubmit}>
+    <form  className="flex flex-col-reverse md:flex-row gap-2 " onSubmit={handleSubmit}>
     <ShinyButton text="registrar" />
     <Input placeholder="john@gmail.com"  name="email"  className="bg-zinc-950 border-zinc-800 w-full" />
   </form>
