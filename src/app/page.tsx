@@ -1,113 +1,78 @@
-import Image from "next/image";
-
-export default function Home() {
+import RetroGrid from "@/components/magicui/retro-grid";
+import FormEmail from "./FormEmail";
+import { Redis } from "@upstash/redis";
+import WordFadeIn from "@/components/magicui/word-fade-in";
+import NumberTicker from "@/components/magicui/number-ticker";
+import { Badge } from "@/components/ui/badge";
+import ShineBorder from "@/components/magicui/shine-border";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+//const redis = Redis.fromEnv();
+export const revalidate = 0;
+const RetroGridDemo = async () => {
+  const emails = 100; //await redis.hgetall("emails");
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <main className=" container mx-auto grid place-items-center min-h-screen gap-4">
+      <section className=" md:max-w-6xl flex flex-col text-balance   mt-16">
+        <ShineBorder
+          borderRadius={8}
+          className="text-center text-xl font-bold capitalize mb-4 self-center"
+          color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+        >
+          🎉 Introducimos a Shamvita
+        </ShineBorder>
+        <WordFadeIn
+          className="text-center  text-6xl"
+          delay={0.5}
+          words="el talento se encuentra con la oportunidad"
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <p className="text-center mt-8 text-xl text-balance md:max-w-2xl self-center">
+          ¿Eres un profesional talentoso buscando nuevas oportunidades o persona
+          en búsqueda de expertos cualificados?.
+        </p>
+        <Link href="#CTA" className="text-center mt-4 text-balance self-center">
+          <Button
+            className="text-center mt-4 text-balance self-center"
+            variant={"outline"}
+          >
+            {" "}
+            Registrate{" "}
+          </Button>
+        </Link>
+        <h2 className="mt-64 text-center  text-4xl font-bold tracking-[-0.02em] text-black/40 drop-shadow-sm dark:text-white/80 md:text-6xl md:leading-[5rem]">
+          Conéctate. Trabaja. <span className=" dark:text-[#d6b43a] ">Brilla</span>.
+        </h2>
+        <p className="text-center self-center text-xl text-pretty mt-4 md:max-w-2xl">
+          En <b><i>Venezuela</i></b>, encontrar personas con habilidades específicas a
+          menudo depende de referencias personales. Ahora, traemos una solución
+          que te permitirá mostrar tu talento y conectar con los mejores
+          profesionales del país.
+        </p>
+     
+      
+      </section>
+      <section
+        title="CTA"
+        id="CTA"
+        className="mt-32 mb-20 w-full  flex flex-col items-center gap-4"
+      >
+        <div className=" relative flex h-full w-80 md:w-full max-w-xl items-center justify-center overflow-hidden rounded-lg border border-[#4b425a] bg-background p-20 md:shadow-xl">
+          <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#FE8FB5] via-[#cc9fff] to-[#f0c731] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
+            shamvita 
+          </span>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <RetroGrid />
+        </div>
+        <FormEmail />
+        <p className="italic text-center text-xl text-gray-500">
+          ¡Más de{" "}
+          <NumberTicker value={typeof emails === "object" ? Object.keys(emails).length : 100} />{" "}
+          personas se han apuntado en la lista de espera!
+        </p>
+      </section>
     </main>
   );
-}
+};
+
+export default RetroGridDemo;
