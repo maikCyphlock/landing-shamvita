@@ -8,7 +8,7 @@ import ShineBorder from "@/components/magicui/shine-border";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 const redis = Redis.fromEnv();
-export const revalidate = 0;
+export const revalidate = 600;
 const RetroGridDemo = async () => {
   const emails = await redis.hgetall("emails");
   let emailsLength = 0;
