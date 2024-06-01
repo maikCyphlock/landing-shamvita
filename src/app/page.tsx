@@ -38,7 +38,7 @@ const RetroGridDemo = async () => {
         </p>
         <Link href="#CTA" className="text-center mt-4 text-balance self-center">
           <Button
-            className="text-center mt-4 text-balance self-center"
+            className="text-center text-2xl md:text-xl mt-4 text-balance self-center"
             variant={"outline"}
           >
             {" "}
