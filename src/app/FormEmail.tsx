@@ -12,7 +12,9 @@ function FormEmail() {
     const schema = zod.string().email("El email no es válido");
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      const email = schema.safeParse(e.target[1].value);
+      const form = e.target as HTMLFormElement;
+      const emailInput = form.elements.namedItem('email') as HTMLInputElement;
+      const email = schema.safeParse(emailInput.value);
   
         if (!email.success) {
         toast.error(email.error.issues[0].message);
