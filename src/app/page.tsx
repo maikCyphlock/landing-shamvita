@@ -18,7 +18,7 @@ const RetroGridDemo = async () => {
   
   return (
     <main className=" container mx-auto grid place-items-center min-h-screen gap-4">
-      <section className=" md:max-w-6xl flex flex-col text-balance   mt-16">
+      <section className=" md:max-w-6xl flex flex-col text-balance bg-zinc mt-16">
         <ShineBorder
           borderRadius={8}
           className="text-center text-xl font-bold capitalize mb-4 self-center"
@@ -27,18 +27,18 @@ const RetroGridDemo = async () => {
           🎉 Introducimos a Shamvita
         </ShineBorder>
         <WordFadeIn
-          className="text-center  text-6xl"
-          delay={0.5}
+          className="text-center font-extrabold  text-6xl"
+          delay={0.3}
           words="el talento se encuentra con la oportunidad"
         />
 
-        <p className="text-center mt-8 text-xl text-balance md:max-w-2xl self-center">
+        <p className="text-center mt-8 text-xl  font-medium text-balance md:max-w-2xl self-center z-10">
           ¿Eres un profesional talentoso buscando nuevas oportunidades o persona
           en búsqueda de expertos cualificados?.
         </p>
-        <Link href="#CTA" className="text-center mt-4 text-balance self-center">
+        <Link href="#CTA" className="text-center z-10 mt-4 text-balance self-center">
           <Button
-            className="text-center text-2xl md:text-xl mt-4 text-balance self-center"
+            className="text-center text-2xl md:text-xl mt-4 text-balance self-center "
             variant={"outline"}
           >
             {" "}

@@ -15,9 +15,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" className="dark">
-      <body >{children}
+      <body >
+        <video src="/bg-sd.mp4" autoPlay muted loop className="absolute inset-0 w-full h-full object-cover blur-2xl brightness-[0.4]" >
+      
+        </video>
+        
+        {children}
+
         <Toaster />
         </body>
     </html>
