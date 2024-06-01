@@ -22,13 +22,14 @@ function FormEmail() {
       
      
       try {
-        const result = await SaveEmailInUpstash(e.target[1].value);
+        const result = await SaveEmailInUpstash(emailInput.value);
         if (result === 'ok') {
           toast.success('El email se registro correctamente');
           router.refresh();
         } 
  
       } catch(error){
+        //@ts-ignore
         toast.error(error.message);
       }
     };
