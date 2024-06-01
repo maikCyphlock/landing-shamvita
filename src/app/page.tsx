@@ -7,6 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+import dynamic from 'next/dynamic'
+
+
+const NumberTickerLazy = dynamic(() => import("@/components/magicui/number-ticker"), { ssr: false })
+const RetroGridLazy = dynamic(() => import("@/components/magicui/retro-grid"), { ssr: false })
+const FormEmailLazy = dynamic(() => import("./FormEmail"), { ssr: false })
+
 const redis = Redis.fromEnv();
 export const revalidate = 600;
 const RetroGridDemo = async () => {
@@ -67,12 +75,12 @@ const RetroGridDemo = async () => {
             shamvita 
           </span>
 
-          <RetroGrid />
+          <RetroGridLazy />
         </div>
-        <FormEmail />
+        <FormEmailLazy />
         <p className="italic text-center text-xl text-gray-500">
           ¡Más de{" "}
-          <NumberTicker value={emailsLength > 100 ? emailsLength : 100} />{" "}
+          <NumberTickerLazy value={emailsLength > 100 ? emailsLength : 100} />{" "}
           personas se han apuntado en la lista de espera!
         </p>
       </section>
