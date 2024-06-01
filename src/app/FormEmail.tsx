@@ -25,6 +25,7 @@ function FormEmail() {
         const result = await SaveEmailInUpstash(emailInput.value);
         if (result === 'ok') {
           toast.success('El email se registro correctamente');
+          //@ts-ignore
           e.target.reset();
           router.refresh();
         } 
