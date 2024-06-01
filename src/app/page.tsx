@@ -7,10 +7,15 @@ import { Badge } from "@/components/ui/badge";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-//const redis = Redis.fromEnv();
+const redis = Redis.fromEnv();
 export const revalidate = 0;
 const RetroGridDemo = async () => {
-  const emails = 100; //await redis.hgetall("emails");
+  const emails = await redis.hgetall("emails");
+  let emailsLength = 0;
+  if (emails !== null) {
+  emailsLength = Object.keys(emails).length;
+  }
+  
   return (
     <main className=" container mx-auto grid place-items-center min-h-screen gap-4">
       <section className=" md:max-w-6xl flex flex-col text-balance   mt-16">
@@ -67,7 +72,7 @@ const RetroGridDemo = async () => {
         <FormEmail />
         <p className="italic text-center text-xl text-gray-500">
           ¡Más de{" "}
-          <NumberTicker value={typeof emails === "object" ? Object.keys(emails).length : 100} />{" "}
+          <NumberTicker value={emailsLength > 100 ? emailsLength : 100} />{" "}
           personas se han apuntado en la lista de espera!
         </p>
       </section>
