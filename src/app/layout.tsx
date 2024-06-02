@@ -18,8 +18,8 @@ export default function RootLayout({
   
   return (
     <html lang="en" className="dark">
-      <body className="relative">
-        <video src="/bg-sd-ultra.mp4" autoPlay muted loop className="absolute z-0 inset-0 w-full h-full object-cover blur-2xl brightness-[0.4]" >
+      <body className="">
+        <video src="/bg-sd-ultra.mp4" autoPlay muted loop className="absolute -z-10 inset-0 w-full h-full object-cover blur-2xl brightness-[0.4]" >
       
         </video>
         
