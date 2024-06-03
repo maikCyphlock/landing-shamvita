@@ -28,7 +28,7 @@ export default function RootLayout({
         <Toaster />
         <footer className="mt-24 flex flex-col gap-4 self-center justify-center items-center p-4 text-center text-sm text-gray-500">
           <p className="text-center text-sm text-gray-500">
-            Hecho con ❤️ por <a href="https://www.instagram.com/maikol_aguilar__/" target="_blank" rel="noopener noreferrer" className="underline">Maikol Aguilar</a>
+            Hecho por <a href="https://www.instagram.com/maikol_aguilar__/" target="_blank" rel="noopener noreferrer" className="underline">Maikol Aguilar</a>
           </p>
           
         </footer>
