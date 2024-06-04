@@ -29,7 +29,7 @@ const RetroGridDemo = async () => {
       <section className=" md:max-w-6xl flex flex-col text-balance bg-zinc mt-16">
         <ShineBorder
           borderRadius={8}
-          className="text-center text-xl font-bold capitalize mb-4 self-center"
+          className="text-center md:text-xl font-bold capitalize mb-4 self-center"
           color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         >
           🎉 Introducimos a Shamvita
@@ -40,7 +40,7 @@ const RetroGridDemo = async () => {
           words="el talento se encuentra con la oportunidad"
         />
 
-        <p className="text-center mt-8 text-2xl  font-medium text-balance md:max-w-4xl self-center z-10">
+        <p className="text-center mt-8 md:text-2xl  font-medium text-balance md:max-w-4xl self-center z-10">
           ¿Eres un profesional talentoso buscando nuevas oportunidades o persona
           en búsqueda de expertos cualificados?.
         </p>
@@ -70,15 +70,15 @@ const RetroGridDemo = async () => {
         id="CTA"
         className="mt-32 mb-20 w-full  flex flex-col items-center gap-4"
       >
-        <div className=" relative flex h-full w-80 md:w-full max-w-xl items-center justify-center overflow-hidden rounded-lg border border-[#4b425a] bg-background p-20 md:shadow-xl">
-          <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#FE8FB5] via-[#cc9fff] to-[#f0c731] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
+        <div className=" relative flex h-full w-60 md:w-full max-w-xl items-center justify-center overflow-hidden rounded-lg border border-[#4b425a] bg-background p-20 md:shadow-xl">
+          <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#FE8FB5] via-[#cc9fff] to-[#f0c731] bg-clip-text text-center text-5xl md:text-7xl font-bold leading-none tracking-tighter text-transparent">
             shamvita 
           </span>
 
           <RetroGridLazy />
         </div>
         <FormEmailLazy />
-        <p className="italic text-center text-xl text-gray-500">
+        <p className="italic text-center md:text-xl text-gray-500">
           ¡Más de{" "}
           <NumberTickerLazy value={emailsLength > 100 ? emailsLength : 100} />{" "}
           personas se han apuntado en la lista de espera!
