@@ -35,12 +35,12 @@ const RetroGridDemo = async () => {
           🎉 Introducimos a Shamvita
         </ShineBorder>
         <WordFadeIn
-          className="text-center font-extrabold  text-6xl"
+          className="text-center font-extrabold  md:text-8xl"
           delay={0.3}
           words="el talento se encuentra con la oportunidad"
         />
 
-        <p className="text-center mt-8 text-xl  font-medium text-balance md:max-w-2xl self-center z-10">
+        <p className="text-center mt-8 text-2xl  font-medium text-balance md:max-w-4xl self-center z-10">
           ¿Eres un profesional talentoso buscando nuevas oportunidades o persona
           en búsqueda de expertos cualificados?.
         </p>
