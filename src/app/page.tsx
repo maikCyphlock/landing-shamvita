@@ -1,6 +1,5 @@
 import RetroGrid from "@/components/magicui/retro-grid";
 import FormEmail from "./FormEmail";
-import { Redis } from "@upstash/redis";
 import WordFadeIn from "@/components/magicui/word-fade-in";
 import NumberTicker from "@/components/magicui/number-ticker";
 import { Badge } from "@/components/ui/badge";
@@ -15,14 +14,9 @@ const NumberTickerLazy = dynamic(() => import("@/components/magicui/number-ticke
 const RetroGridLazy = dynamic(() => import("@/components/magicui/retro-grid"), { ssr: false })
 const FormEmailLazy = dynamic(() => import("./FormEmail"), { ssr: false })
 
-const redis = Redis.fromEnv();
 export const revalidate = 600;
 const RetroGridDemo = async () => {
-  const emails = await redis.hgetall("emails");
-  let emailsLength = 0;
-  if (emails !== null) {
-  emailsLength = Object.keys(emails).length;
-  }
+  const emailsLength = 100;
   
   return (
     <main className=" container mx-auto grid place-items-center min-h-screen gap-4">
